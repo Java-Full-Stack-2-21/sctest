@@ -36,7 +36,7 @@ public class UserServiceTest {
     void testGetUserGivenUserIdUserNotFound() {
         //arrange (the setup info we need prior to calling the method)
         User user = new User(1, "kev123", "pass123", "Employee");
-        Mockito.when(userRepo.findById(user.getId())).thenReturn(Optional.of(null));
+        Mockito.when(userRepo.findById(user.getId())).thenReturn(Optional.empty());
 
         //act (actually calling the method)
         User actualResult = this.userService.getUserGivenUserId(user.getId());
